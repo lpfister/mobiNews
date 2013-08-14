@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--HTML5 doctype-->
+<html>
+
+    <head>
+        <title>App Framework Kitchen Sink</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+        <link rel="stylesheet" type="text/css" href="css/icons.css" />    
+ 
+        <link rel="stylesheet" type="text/css" href="css/af.ui.css" title="default" />
+  
+        <script type="text/javascript" charset="utf-8" src="./libs/appframework.js"></script>
+        
+        <!-- include af.desktopBrowsers.js on desktop browsers only -->
+        <script>
+       
+            if (!((window.DocumentTouch && document instanceof DocumentTouch) || 'ontouchstart' in window)) {
+                var script = document.createElement("script");
+                script.src = "libs/plugins/af.desktopBrowsers.js";
+                var tag = $("head").append(script);
+            }
+           
+          
+        </script>
+
+        <script type="text/javascript" charset="utf-8" src="./libs/appframework.ui.js"></script>
+
+        <!-- Plugin -->
+        <script type="text/javascript" charset="utf-8" src="./libs/plugins/af.css3animate.js"></script>
+        <script type="text/javascript" charset="utf-8" src="./libs/plugins/af.scroller.js"></script>
+        
+        <!--<script type="text/javascript" charset="utf-8" src="./ui/transitions/all.js"></script>-->
+        <script type="text/javascript" charset="utf-8" src="./libs/plugins/af.slidemenu.js"></script>
+
+        <!-- mvc -->
+        <script type="text/javascript" charset="utf-8" src="./libs/af.mvc.js"></script>
+        
+
+        <!-- main.js -->
+        <script type="text/javascript" charset="utf-8" src="./app.js"></script>
+
+        <style>
+            /*  Custom big list*/
+            #afui .list.listBig > li > a {
+              padding:0px 0px;
+              height:80px;
+            }
+            #afui .list.listBig > li > a > img{
+              float:left;
+              padding-right:10px;
+            }
+            #afui .list.listBig > li > a > h2{
+              margin-bottom:-5px;
+              padding-bottom:0px;
+            }
+            #afui .list.listBig > li > a > p{
+              margin-right: 15px; 
+            }
+        </style>
+</head>
+
+    <body>
+        <div id="afui" class="">
+            
+            <!-- this is the splashscreen you see. -->
+            <div id="splashscreen" class='ui-loader heavy'>
+                App Framework
+                <br>
+                <br>	<span class='ui-icon ui-icon-loading spin'></span>
+                <h1>Starting app</h1>
+
+            </div>
+
+            <!-- The header -->
+            <div id="header">
+                <a id='menubadge' onclick='af.ui.toggleSideMenu()' class='menuButton'></a>
+            </div>
+
+            <!-- THe content of the app -->
+            <div id="content">
+               
+
+                <!-- Home page -->
+                <div title='Home' id="home" class="panel" >
+                </div>
+
+                <!-- News page -->
+                <div id="news" class="panel" title="News" >  
+                </div>
+
+                <!-- News Details page -->
+                <div id="newsDetails" class="panel" title="News" >  
+                </div>
+
+            <!-- navigation bar -->               
+            <nav>
+                <ul class="list">
+                    <li>
+                        <a href="#home" data-transition="none">Home</a>
+                    </li>
+                    <li>
+                        <a href="#news" data-transition="none">News</a>
+                    </li>
+                    <li>
+                        <a href="#contact" data-transition="none">Contact</a>
+                    </li>
+                   
+                </ul>
+            </nav>
+            </div>
+
+    </body>
+</html>
